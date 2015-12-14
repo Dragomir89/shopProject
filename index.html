@@ -52,7 +52,7 @@
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="model.js"></script>
-    <script src="viuew.js"></script>
+    <script src="view.js"></script>
     <script src="main.js"></script>
 
 
@@ -68,17 +68,17 @@
         <h1><i>Technomarket</i></h1>
     </header>
     <nav>
-        <a class="navItems" href="#" id="about">Add your article</a>
+        <a class="navItems" href="#" id="addObj">Add your article</a>
         <a class="navItems" href="#" id="home">Products</a>
         <a class="navItems" href="#" id="contact">Contact</a>
     </nav>
 
     <!-- ADD ARTICLE -->
 
-    <div class="aboutMe">
+    <div class="addProduct">
         <section class="aboutMeTopSection">
 
-            <form>
+            <form method="get">
                 <div class="fieldWrapper">
                     <label for="ownerName">Your name</label>
                     <input type="text" id="ownerName" class="inputField"/>
@@ -120,7 +120,7 @@
 
     <!-- PRODUCTS -->
 
-    <div class="projects">
+    <div class="products">
         <div id="wrapper">
             <div id="productContainer"></div>
 
@@ -191,7 +191,7 @@
     // This is my jQuery
 
     $( document ).ready(function(){
-        var aboutLink = $('#about');
+        var aboutLink = $('#addObj');
         var homeLink = $('#home');
         var contactLink = $('#contact');
 
@@ -200,8 +200,8 @@
         var contactMe = $('#contactMe');
         var sendYourInfo = $('.btn');
 
-        var aboutMe = $('.aboutMe');
-        var home = $('.projects');
+        var addProduct = $('.addProduct');
+        var home = $('.products');
         var contacts = $('.contact');
         var contactForm = $('.contactForm');
 
@@ -223,20 +223,20 @@
         function clickProjects(){
             home.fadeIn(200);
             home.css('display', 'block');
-            aboutMe.css('display','none');
+            addProduct.css('display','none');
             contacts.css('display', 'none');
         }
         function clickAboutMe(){
-            aboutMe.fadeIn(200);
+            addProduct.fadeIn(200);
             home.css('display', 'none');
             contacts.css('display', 'none');
-            aboutMe.css('display','block');
+            addProduct.css('display','block');
         }
         function clickContacts(){
             contacts.fadeIn(200);
             contacts.css('display', 'block');
             home.css('display', 'none');
-            aboutMe.css('display','none');
+            addProduct.css('display','none');
         }
         function showContactForm(){
             contactForm.slideDown(200);

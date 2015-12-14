@@ -1,0 +1,29 @@
+#productContainer{
+    border: 1px solid silver;
+
+}
+.productWrapper{
+    background-color: white;
+    border: 1px solid silver;
+    border-radius: 7px;
+    display: inline-block;
+    width: 250px;
+    margin: 20px;
+}
+.productInfo{
+    display: flex;
+    padding: 5px;
+    text-align: center;
+}
+.marks{
+    display: inline-block;
+    padding: 10px;
+    color: #0499DB;
+}
+#buy{
+    border-radius: 7px;
+    border: 1px solid #0499DB;
+    background-color: #0499DB;
+    color: white;
+    margin: 5px;
+}

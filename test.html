@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shop</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="testCss/nomalizer.css">
+    <link rel="stylesheet" href="testCss/style_addProduct.css">
+    <link rel="stylesheet" href="testCss/style_nav.css">
+    <link rel="stylesheet" href="testCss/style_fields.css">
+    <link rel="stylesheet" href="testCss/style_products.css">
+
+
+    <script src="testScripts/model.js"></script>
+    <script src="testScripts/view.js"></script>
+    <script src="testScripts/main.js"></script>
+</head>
+<body>
+
+
+
+    <div class="wrapper col-lg-8">
+        <nav>
+            <a class="navItems" href="#" id="addObj">Add your article</a>
+            <a class="navItems" href="#" id="products">Products</a>
+            <a class="navItems" href="#" id="contact"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+        </nav>
+
+        <div class="addProduct">
+            <form method="get">
+                <div class="fieldWrapper">
+                    <label for="ownerName">Your name</label>
+                    <input type="text" id="ownerName" class="inputField"/>
+                </div>
+                <div class="fieldWrapper">
+                    <label for="ownerPhone">Phone</label>
+                    <input type="text" id="ownerPhone" class="inputField"/>
+                </div>
+                <div class="fieldWrapper">
+                    <label for="productName">product name</label>
+                    <input type="text" id="productName" class="inputField"/>
+                </div>
+                <div class="fieldWrapper">
+
+                    <label for="isNew">new</label>
+                    <input type="radio" id="isNew" name="isNew" class="radio"/>
+                </div>
+                <div class="fieldWrapper">
+                    <label for="isntNew">second hand</label>
+                    <input type="radio" id="isntNew" name="isNew" class="radio">
+
+                </div>
+                <div class="fieldWrapper">
+                    <label for="inGuarantee">guarantee</label>
+                    <input type="checkbox" id="inGuarantee" class="radio"/>
+                </div>
+                <div class="fieldWrapper">
+                    <label for="city">city</label>
+                    <input type="text" id="city" class="inputField"/>
+                </div>
+                <div class="fieldWrapper">
+                    <label for="price">price</label>
+                    <input type="text" id="price" class="inputField"/>
+                </div>
+                <button id="addProduct">Add article</button>
+            </form>
+
+        </div>
+        <div class="products">
+            <div id="wrapper">
+                <div>
+                    <ul>
+                        <a href="#"><li class="marks">Apple</li></a>
+                        <a href="#"><li class="marks">Samsung</li></a>
+                        <a href="#"><li class="marks">LG</li></a>
+                        <a href="#"><li class="marks">Lenovo</li></a>
+                        <a href="#"><li class="marks">Motorola</li></a>
+                        <a href="#"><li class="marks">Sony</li></a>
+                        <a href="#"><li class="marks">Sony</li></a>
+                        <a href="#"><li class="marks">HTC</li></a>
+                        <a href="#"><li class="marks">Nokia</li></a>
+                    </ul>
+                </div>
+            </div>
+                <div id="productContainer"></div>
+        </div>
+    </div>
+<script>
+    $( document ).ready(function(){
+        var aboutLink = $('#addObj');
+        var homeLink = $('#products');
+        var contactLink = $('#contact');
+
+
+
+        var contactMe = $('#contactMe');
+        var sendYourInfo = $('.btn');
+
+        var addProduct = $('.addProduct');
+        var home = $('.products');
+        var contacts = $('.contact');
+        var contactForm = $('.contactForm');
+
+
+        var inputName = $('#name');
+        var inputPhone = $('#phone');
+
+
+        homeLink.on('click', clickProjects);
+        aboutLink.on('click', clickAboutMe);
+        contactLink.on('click', clickContacts);
+
+
+
+        contactMe.on('click',showContactForm);
+        sendYourInfo.on('click', hideContactForm);
+
+
+        function clickProjects(){
+            home.fadeIn(200);
+            home.css('display', 'block');
+            addProduct.css('display','none');
+            contacts.css('display', 'none');
+        }
+        function clickAboutMe(){
+            addProduct.fadeIn(200);
+            home.css('display', 'none');
+            contacts.css('display', 'none');
+            addProduct.css('display','block');
+        }
+        function clickContacts(){
+            contacts.fadeIn(200);
+            contacts.css('display', 'block');
+            home.css('display', 'none');
+            addProduct.css('display','none');
+        }
+        function showContactForm(){
+            contactForm.slideDown(200);
+            contactForm.css('display', 'block');
+        }
+        function hideContactForm(){
+
+            if(inputName.val() == ''){
+                alert('input name !');
+            }else if(inputPhone.val() == ''){
+                alert('input phone !');
+            }else{
+                contactForm.slideUp(200);
+            }
+
+        }
+    });
+</script>
+
+</body>
+</html>
