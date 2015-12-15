@@ -7,7 +7,7 @@
     border: 1px solid silver;
     border-radius: 7px;
     display: inline-block;
-    width: 250px;
+    width: 307px;
     margin: 20px;
 }
 .productInfo{
@@ -20,10 +20,18 @@
     padding: 10px;
     color: #0499DB;
 }
+.marks:hover{
+    text-decoration: underline;
+}
 #buy{
     border-radius: 7px;
     border: 1px solid #0499DB;
     background-color: #0499DB;
     color: white;
     margin: 5px;
+}
+#buy:hover{
+    box-shadow: 1px 1px 6px 1px #003b64;
+    border: 1px solid #003b64;
+    background-color: #003b64;
 }
