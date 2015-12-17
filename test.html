@@ -63,14 +63,14 @@
                 <label for="productName" class="col-sm-2 control-label">Mark </label>
                 <div class="col-sm-10">
                     <select id="productName" class="form-control">
-                        <option>Apple</option>
-                        <option>Samsung</option>
-                        <option>LG</option>
-                        <option>Lenovo</option>
-                        <option>Motorola</option>
-                        <option>Sony</option>
-                        <option>HTC</option>
-                        <option>Nokia</option>
+                        <option value="Apple">Apple</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="LG">LG</option>
+                        <option value="Lenovo">Lenovo</option>
+                        <option value="Motorola">Motorola</option>
+                        <option value="Sony">Sony</option>
+                        <option value="HTC">HTC</option>
+                        <option value="Nokia">Nokia</option>
                     </select>
                 </div>
             </div>
@@ -136,7 +136,7 @@
 <script>
     $( document ).ready(function(){
         var addObj = $('#addObj');
-        var products = $('#products');
+        var  value=homeLink = $('#products');
         var contactLink = $('#contact');
 
 
@@ -154,7 +154,7 @@
         var inputPhone = $('#phone');
 
 
-        products.on('click', clickProjects);
+        homeLink.on('click', clickProjects);
         addObj.on('click', clickAboutMe);
         contactLink.on('click', clickContacts);
 
