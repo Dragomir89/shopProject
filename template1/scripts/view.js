@@ -48,9 +48,6 @@ app.viewModel = (function(){
 
         var addProduct = $('#addProduct');
         addProduct.click(function(){
-
-            console.log('click! ! !1');
-
             app.viewModel.products.addProduct();
         });
 
@@ -154,32 +151,25 @@ app.viewModel = (function(){
         }
 
 
+        /*
+
+         <div class="col-md-4 portfolio-item">
+         <a href="#"><img class="img-responsive" src="http://placehold.it/700x400" alt="">
+         </a>
+         <h3>
+         <a href="#">Project Name</a>
+         </h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+         </div>
+
+        */
         function createElement(product){
             var product = product;
             console.log('in function');
             console.log(product);
 
 
-            var paragraphs = [];
 
-            var productWrapper = $('<div>');
-            var ownerNameP     = $('<p>');
-            var ownerPhoneP    = $('<p>');
-            var productNameP   = $('<p>');
-            var isNewP         = $('<p>');
-            var inGuaranteeP   = $('<p>');
-            var cityP          = $('<p>');
-            var priceP         = $('<p>');
-            var createdAtP     = $('<p>');
-            paragraphs.push(ownerNameP);
-            paragraphs.push(ownerPhoneP);
-            paragraphs.push(productNameP);
-            paragraphs.push(isNewP);
-            paragraphs.push(inGuaranteeP);
-            paragraphs.push(cityP);
-            paragraphs.push(priceP);
-            paragraphs.push(createdAtP);
-            var btn = $('<button id="buy">Add ot <span class="glyphicon glyphicon-shopping-cart"></span></button>');
 
 
 
@@ -193,47 +183,73 @@ app.viewModel = (function(){
             var prID            = product.objectId ? product.objectId : timeAndId.objectId;
             var createdAt       = product.createdAt ? product.createdAt : timeAndId.createdAt;   /// !!!
 
-            console.log(prID + ' this is ID');
-            console.log(createdAt + ' this is TIME');
-
-            productWrapper.addClass('productWrapper');
-
-            ownerNameP  .text('owner: ' + valOwnerName);
-            ownerPhoneP .text('phone: ' + valOwnerPhone);
-            productNameP.text('product: ' + valProductName);
-            isNewP      .text('new: ' + valIsNew);
-            inGuaranteeP.text('guarantee: ' + valInGuarantee);
-            cityP       .text('city: ' + valCity);
-            priceP      .text('prise: ' + valPrise);
-            createdAtP  .text('added in: ' + createdAt);
-
-            productWrapper.attr('data-id',  prID);
 
 
-            for (var i = 0; i < paragraphs.length; i++){
-                paragraphs[i].addClass('productInfo');
-                paragraphs[i].appendTo(productWrapper);
-            }
+            var htmlProduct = '<div class="col-md-4 portfolio-item">\
+            <a href="#">\
+                <img class="img-responsive" src="http://placehold.it/700x400" alt="">\
+                </a>\
+                <h3>\
+                <a href="#"> '+ valProductName +'</a>\
+            </h3>\
+             <p>'+ valOwnerName +'</p>\
+             <p> owner number: '+ valOwnerPhone +'</p>\
+             <p> new: '+ valIsNew +'</p>\
+             <p> guarantee: '+ valInGuarantee +'</p>\
+             <p> City: '+ valCity +'</p>\
+             <p> prise: '+ valPrise +' lv</p>\
+             <p> crated at: '+ createdAt +'</p>\
+            </div>';
 
+            var productContainer = $('#productContainer');
 
-            btn.appendTo(productWrapper);
-
-            btn.click(function(e){
-
-                var currentID = e.target.parentNode.getAttribute("data-id"); // opravi go !
-
-                app.viewModel.products.boughtProducts.push(e.target);     /// trqbva da se prihvane obekta i da se dobavi v masiva !!!!!
-                console.log(app.viewModel.products.boughtProducts);
-
-
-                app.viewModel.products.delete(prID);
+            productContainer.append($(htmlProduct));
 
 
 
-            });
 
 
-            productWrapper.appendTo('#productContainer');
+
+
+            //
+            //console.log(prID + ' this is ID');
+            //console.log(createdAt + ' this is TIME');
+            //
+            //productWrapper.addClass('productWrapper');
+            //
+            //ownerNameP  .text('owner: ' + valOwnerName);
+            //ownerPhoneP .text('phone: ' + valOwnerPhone);
+            //productNameP.text('product: ' + valProductName);
+            //isNewP      .text('new: ' + valIsNew);
+            //inGuaranteeP.text('guarantee: ' + valInGuarantee);
+            //cityP       .text('city: ' + valCity);
+            //priceP      .text('prise: ' + valPrise);
+            //createdAtP  .text('added in: ' + createdAt);
+            //
+            //productWrapper.attr('data-id',  prID);
+
+
+
+
+            //
+            //btn.appendTo(productWrapper);
+            //
+            //btn.click(function(e){
+            //
+            //    var currentID = e.target.parentNode.getAttribute("data-id"); // opravi go !
+            //
+            //    app.viewModel.products.boughtProducts.push(e.target);     /// trqbva da se prihvane obekta i da se dobavi v masiva !!!!!
+            //    console.log(app.viewModel.products.boughtProducts);
+            //
+            //
+            //    app.viewModel.products.delete(prID);
+            //
+            //
+
+            //});
+
+
+            //productWrapper.appendTo('#productContainer');
 
 
         }
