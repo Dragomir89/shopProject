@@ -40,7 +40,7 @@ app.viewModel = (function(){
         this.model.getAll(function(product){
 
             allProducts = product.results;
-                                                                // da se kopira !!!!
+
 
             },
             function(){
@@ -70,19 +70,19 @@ app.viewModel = (function(){
 
 
 
-            app.viewModel.products.model.getAll(function(product){   // promqna
+            app.viewModel.products.model.getAll(function(product){
 
                     var allProducts = product.results;
                     console.log(allProducts);
 
                     allProducts.forEach(function(element){
-                        if(!element.isBought){                         // tuk
+                        if(!element.isBought){
 
                             addProductToDom(element,null,selector);
                         }
                     });
 
-                },                                     /// novoto
+                },
                 function(error){
                     console.log(error.responseText);
                     return false;
@@ -393,7 +393,7 @@ app.viewModel = (function(){
             var valCity         = product.city + '';
             var valPrise        = Number(product.price);
             var prID            = product.objectId ? product.objectId : timeAndId.objectId;
-            var createdAt       = product.createdAt ? product.createdAt : timeAndId.createdAt;   /// !!!
+            var createdAt       = product.createdAt ? product.createdAt : timeAndId.createdAt;
             var currentTime     = createdAt.match(/\d+-\d+-\d+/g);
 
             var buttonID        = prID + 1;
